@@ -1,0 +1,156 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+      //  System.out.println("Hello, World!");
+        
+       // EVCard card = new EVCard("001", "Personal", "GuruCM");
+        
+       // System.out.println("Card name:" + card.cardName);
+       //  System.out.println("Card name:" + card.userName);
+         
+        // int sum = HelloWorld.addTwoNum ( 12 , 13) ;
+         
+          //  System.out.println("Sum is :" + sum);
+         //  String msg  = HelloWorld.getMessage ( "Santosh" , 36) ;
+          // System.out.println("Out MSG :" + msg);
+          
+          
+          /*  boolean res  = HelloWorld.isValid ( 36) ;
+            if(res){
+                System.out.println(" he can vote");
+            }else{
+                 System.out.println(" he can't vote");
+            }
+             System.out.println(" ============================== ");
+            
+            res  = HelloWorld.isValid ( 17) ;
+            if(res){
+                System.out.println(" he can vote");
+            }else{
+                 System.out.println(" he can't vote");
+            }*/
+           
+        
+             EVCard card = HelloWorld.getCard();
+        
+        System.out.println("Card name:" + card.cardName);
+         System.out.println("Card User name:" + card.userName);
+         
+         System.out.println(" ============================== ");
+         
+         
+         Contact contact = HelloWorld.getContact();
+            System.out.println(contact.getContactInfo());
+       
+    }
+    
+    
+    static Contact getContact(){
+        Contact tcontact = null ;
+        
+        //Code goes here
+        tcontact = new Contact("2001", "Vijay.R", "9879879878" , "vijay@gmail.com");
+        
+        return tcontact ;
+    }
+    
+    
+    static EVCard getCard(){
+       EVCard evCard = null ;
+       
+       //Code goes here
+       
+       evCard = new EVCard("001", "Office", "Vinayak");
+        
+        return evCard ;
+    }
+    
+   static int addTwoNum(int a , int b){
+        int result = 0 ;
+        // Code here 
+        result = a + b ;
+        
+        return result ;
+    }
+    
+    
+     static boolean isValid(int age){
+        boolean result = false ;
+        
+        // Code here  id age is less then 18 return false , else true
+        
+        // One way to validation
+        if(age >= 18){
+            result = true ;
+        }
+        
+        
+        //Other way of validation 
+       // result =  (age >= 18) ;
+        
+        
+        
+        
+        return result ;
+    }
+    
+    static String getMessage(String name , int age){
+        String result = "" ;
+        //Code  Print wellcome for name and age
+        
+        result  = "Welcome " + name + " you age is " + age ;
+        
+        
+        return result ;
+    }
+    
+}
+
+
+class EVCard{
+    //POJO , Entity
+    
+    String id;
+    String cardName;
+    String userName;
+    
+    EVCard(String tid , String tcardName , String tuserName ){
+        this.id = tid;
+        this.cardName = tid;
+        this.userName = tuserName;
+    }
+
+}
+
+
+class Contact{
+     String id;
+    String name;
+    String phone;
+    String email;
+    
+      Contact(String tid , String tname , String tphone, String temail ){
+        this.id = tid;
+        this.name = tname;
+        this.phone = tphone;
+        this.email = temail ;
+    }
+    
+    String getContactInfo(){
+        String contactInfo = "" ;
+        
+        
+        //Code goes here
+      //  contactInfo = "Contact : "+ name + " Phone: " + phone + " " + email ;
+        
+        
+        contactInfo = "Contact : Mr/Mrs."+ name + " Phone: " + email + " " + phone ;
+  
+  
+        return contactInfo;
+    }
+    
+    
+}
